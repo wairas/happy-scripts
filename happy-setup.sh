@@ -15,7 +15,7 @@ function install_happy_tools()
   rm -Rf ~/happy
   virtualenv --system-site-packages -p /usr/bin/python3 ~/happy
   ~/happy/bin/pip install git+https://github.com/wairas/happy-tools.git
-  wget -O ~/happy-launch.sh https://raw.githubusercontent.com/wairas/happy-scripts/main/happy-launch.sh
+  wget -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
   chmod a+x ~/happy-launch.sh
 }
 
