@@ -6,7 +6,7 @@ function prepare_system()
   echo "Preparing system..."
   sudo apt update && \
     sudo apt -y upgrade && \
-    sudo apt -y install virtualenv python3-tk redis redis-server unzip
+    sudo apt -y install virtualenv python3-tk redis redis-server unzip openjdk-11-jdk
 }
 
 function install_happy_tools()
