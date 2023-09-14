@@ -5,8 +5,8 @@ function prepare_system()
 {
   echo "Preparing system..."
   sudo apt update && \
-  sudo apt -y upgrade && \
-  sudo apt -y install virtualenv python3-tk docker.io wget redis redis-server
+    sudo apt -y upgrade && \
+    sudo apt -y install virtualenv python3-tk docker.io wget redis redis-server
 }
 
 function install_happy_tools()
@@ -136,7 +136,9 @@ then
   echo "This script requires the 'dialog' tool, which is currently not installed."
   echo "Press ENTER to install it or CTRL+C to exit."
   read
-  sudo apt install -y dialog
+  sudo apt update && \
+    sudo apt -y upgrade && \
+    sudo apt install -y dialog
 fi
 
 # menu loop

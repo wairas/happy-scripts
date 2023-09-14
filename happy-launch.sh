@@ -37,7 +37,9 @@ then
   echo "This script requires the 'dialog' tool, which is currently not installed."
   echo "Press ENTER to install it or CTRL+C to exit."
   read
-  sudo apt install -y dialog
+  sudo apt update && \
+    sudo apt -y upgrade && \
+    sudo apt install -y dialog
 fi
 
 # menu loop
