@@ -5,30 +5,35 @@ function envi_viewer()
 {
   echo "ENVI Viewer..."
   ~/happy/bin/envi-viewer &
+  exit 0
 }
 
 function start_sam()
 {
   echo "Starting SAM..."
   ~/sam/start.sh &
+  exit 0
 }
 
 function stop_sam()
 {
   echo "Stopping SAM..."
   ~/sam/stop.sh &
+  exit 0
 }
 
 function start_sam_hq()
 {
   echo "Starting SAM-HQ..."
   ~/sam-hq/start.sh &
+  exit 0
 }
 
 function stop_sam_hq()
 {
   echo "Stopping SAM-HQ..."
   ~/sam-hq/stop.sh &
+  exit 0
 }
 
 # do we have dialog installed?
