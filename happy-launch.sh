@@ -4,7 +4,7 @@
 function envi_viewer()
 {
   echo "ENVI Viewer..."
-  ~/happy/bin/envi-viewer &
+  ~/happy/bin/envi-viewer --autodetect_channels --redis_connect &
   clear
   exit 0
 }
