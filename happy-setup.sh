@@ -6,7 +6,7 @@ function prepare_system()
   echo "Preparing system..."
   sudo apt update && \
   sudo apt -y upgrade && \
-  sudo apt -y install virtualenv python3-tk docker.io wget
+  sudo apt -y install virtualenv python3-tk docker.io wget redis redis-server
 }
 
 function install_happy_tools()
