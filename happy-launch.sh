@@ -38,7 +38,6 @@ then
   echo "Press ENTER to install it or CTRL+C to exit."
   read
   sudo apt update && \
-    sudo apt -y upgrade && \
     sudo apt install -y dialog
 fi
 
