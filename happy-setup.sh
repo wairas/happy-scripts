@@ -39,6 +39,10 @@ function install_sam()
   echo "- downloading model"
   wget -O ~/sam/models/sam_vit_l_0b3195.pth https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth
 
+  # pulling image
+  echo "- pulling docker image"
+  docker pull waikatodatamining/pytorch-sam:2023-04-16_cuda11.6
+
   # scripts
   echo "- creating scripts"
   # start script
@@ -90,6 +94,10 @@ function install_sam_hq()
   # download model
   echo "- downloading model"
   wget -O ~/sam-hq/models/sam_hq_vit_l.pth https://huggingface.co/lkeab/hq-sam/resolve/main/sam_hq_vit_l.pth
+
+  # pulling image
+  echo "- pulling docker image"
+  docker pull waikatodatamining/pytorch-sam-hq:2023-08-17_cuda11.6
 
   # scripts
   echo "- creating scripts"
