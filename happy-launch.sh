@@ -9,6 +9,14 @@ function envi_viewer()
   exit 0
 }
 
+function adams()
+{
+  echo "ADAMS..."
+  ~/adams/bin/start_gui.sh &
+  clear
+  exit 0
+}
+
 function start_sam()
 {
   echo "Starting SAM..."
@@ -53,10 +61,11 @@ fi
 
 # menu loop
 items=(1 "ENVI Viewer"
-       2 "Start SAM"
-       3 "Stop SAM"
-       4 "Start SAM-HQ"
-       5 "Stop SAM-HQ")
+       2 "ADAMS"
+       3 "Start SAM"
+       4 "Stop SAM"
+       5 "Start SAM-HQ"
+       6 "Stop SAM-HQ")
 
 num_items=${#items[@]}
 height=$(($num_items/2+7))
@@ -70,10 +79,11 @@ while choice=$(dialog --title "Happy Tools" \
     do
     case $choice in
         1) envi_viewer;;
-        2) start_sam;;
-        3) stop_sam;;
-        4) start_sam_hq;;
-        5) stop_sam_hq;;
+        2) adams;;
+        3) start_sam;;
+        4) stop_sam;;
+        5) start_sam_hq;;
+        6) stop_sam_hq;;
     esac
 done
 

@@ -6,7 +6,7 @@ function prepare_system()
   echo "Preparing system..."
   sudo apt update && \
     sudo apt -y upgrade && \
-    sudo apt -y install virtualenv python3-tk redis redis-server
+    sudo apt -y install virtualenv python3-tk redis redis-server unzip
 }
 
 function install_happy_tools()
@@ -24,6 +24,15 @@ function update_happy_tools()
   echo "Updating happy tools..."
   ~/happy/bin/pip uninstall -y happy-tools
   ~/happy/bin/pip install git+https://github.com/wairas/happy-tools.git
+}
+
+function install_adams()
+{
+  echo "Installing ADAMS..."
+  rm -Rf ~/adams
+  wget -O ~/adams.zip https://adams.cms.waikato.ac.nz/snapshots/adams/adams-annotator-snapshot-bin.zip
+  unzip -q adams.zip
+  mv adams-annotator-*-SNAPSHOT adams
 }
 
 function install_sam()
@@ -152,8 +161,9 @@ fi
 items=(1 "Prepare system"
        2 "Install Happy Tools"
        3 "Update Happy Tools"
-       4 "Install SAM"
-       5 "Install SAM-HQ")
+       4 "Install ADAMS"
+       5 "Install SAM"
+       6 "Install SAM-HQ")
 
 num_items=${#items[@]}
 height=$(($num_items/2+7))
@@ -168,8 +178,9 @@ while choice=$(dialog --title "Happy Tools Setup" \
         1) prepare_system;;
         2) install_happy_tools;;
         3) update_happy_tools;;
-        4) install_sam;;
-        5) install_sam_hq;;
+        4) install_adams;;
+        5) install_sam;;
+        6) install_sam_hq;;
     esac
 done
 
