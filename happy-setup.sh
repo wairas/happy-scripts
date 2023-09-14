@@ -22,7 +22,7 @@ function install_happy_tools()
 function update_happy_tools()
 {
   echo "Updating happy tools..."
-  ~/happy/bin/pip uninstall happy-tools
+  ~/happy/bin/pip uninstall -y happy-tools
   ~/happy/bin/pip install git+https://github.com/wairas/happy-tools.git
 }
 
