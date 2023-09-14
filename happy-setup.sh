@@ -130,7 +130,16 @@ function install_sam_hq()
   echo "- done!"
 }
 
+# do we have dialog installed?
+if [ ! -x "/usr/bin/dialog" ]
+then
+  echo "This script requires the 'dialog' tool, which is currently not installed."
+  echo "Press ENTER to install it or CTRL+C to exit."
+  read
+  sudo apt install -y dialog
+fi
 
+# menu loop
 items=(1 "Prepare system"
        2 "Install Happy Tools"
        3 "Update Happy Tools"

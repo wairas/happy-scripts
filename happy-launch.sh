@@ -31,7 +31,16 @@ function stop_sam_hq()
   ~/sam-hq/stop.sh &
 }
 
+# do we have dialog installed?
+if [ ! -x "/usr/bin/dialog" ]
+then
+  echo "This script requires the 'dialog' tool, which is currently not installed."
+  echo "Press ENTER to install it or CTRL+C to exit."
+  read
+  sudo apt install -y dialog
+fi
 
+# menu loop
 items=(1 "ENVI Viewer"
        2 "Start SAM"
        3 "Stop SAM"
