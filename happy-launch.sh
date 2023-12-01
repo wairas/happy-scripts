@@ -9,6 +9,14 @@ function envi_viewer()
   exit 0
 }
 
+function data_viewer()
+{
+  echo "Data Viewer..."
+  ~/happy/bin/happy-data-viewer &
+  clear
+  exit 0
+}
+
 function adams()
 {
   echo "ADAMS..."
@@ -61,17 +69,18 @@ fi
 
 # menu loop
 items=(1 "ENVI Viewer"
-       2 "ADAMS"
-       3 "Start SAM"
-       4 "Stop SAM"
-       5 "Start SAM-HQ"
-       6 "Stop SAM-HQ")
+       2 "HAPPy Data Viewer"
+       3 "ADAMS"
+       4 "Start SAM"
+       5 "Stop SAM"
+       6 "Start SAM-HQ"
+       7 "Stop SAM-HQ")
 
 num_items=${#items[@]}
 height=$(($num_items/2+7))
 width=40
 
-while choice=$(dialog --title "Happy Tools" \
+while choice=$(dialog --title "HAPPy Tools" \
                  --ok-label "Launch" \
                  --cancel-label "Exit" \
                  --menu "Please select" $height $width $num_items "${items[@]}" \
@@ -79,11 +88,12 @@ while choice=$(dialog --title "Happy Tools" \
     do
     case $choice in
         1) envi_viewer;;
-        2) adams;;
-        3) start_sam;;
-        4) stop_sam;;
-        5) start_sam_hq;;
-        6) stop_sam_hq;;
+        2) data_viewer;;
+        3) adams;;
+        4) start_sam;;
+        5) stop_sam;;
+        6) start_sam_hq;;
+        7) stop_sam_hq;;
     esac
 done
 
