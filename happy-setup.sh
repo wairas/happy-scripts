@@ -23,7 +23,7 @@ function update_happy_tools()
 {
   echo "Updating happy tools..."
   ~/happy/bin/pip uninstall -y happy-tools
-  ~/happy/bin/pip install git+https://github.com/wairas/happy-tools.git
+  ~/happy/bin/pip install --upgrade git+https://github.com/wairas/happy-tools.git
   wget -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
   chmod a+x ~/happy-launch.sh
 }
