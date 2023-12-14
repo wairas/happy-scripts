@@ -20,7 +20,7 @@ function data_viewer()
 function raw_checker()
 {
   echo "Raw checker..."
-  ~/happy/bin/happy-data-viewer &
+  ~/happy/bin/happy-raw-checker &
   clear
   exit 0
 }
