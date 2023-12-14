@@ -15,7 +15,7 @@ function install_happy_tools()
   rm -Rf ~/happy
   virtualenv --system-site-packages -p /usr/bin/python3 ~/happy
   ~/happy/bin/pip install git+https://github.com/wairas/happy-tools.git
-  wget -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
+  wget --no-cache -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
   chmod a+x ~/happy-launch.sh
 }
 
@@ -24,7 +24,7 @@ function update_happy_tools()
   echo "Updating happy tools..."
   ~/happy/bin/pip uninstall -y happy-tools
   ~/happy/bin/pip install --upgrade git+https://github.com/wairas/happy-tools.git
-  wget -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
+  wget --no-cache -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
   chmod a+x ~/happy-launch.sh
 }
 
@@ -32,7 +32,7 @@ function install_adams()
 {
   echo "Installing ADAMS..."
   rm -Rf ~/adams
-  wget -O ~/adams.zip https://adams.cms.waikato.ac.nz/snapshots/adams/adams-annotator-snapshot-bin.zip
+  wget --no-cache -O ~/adams.zip https://adams.cms.waikato.ac.nz/snapshots/adams/adams-annotator-snapshot-bin.zip
   unzip -q adams.zip
   mv adams-annotator-*-SNAPSHOT adams
 }
@@ -48,7 +48,7 @@ function install_sam()
 
   # download model
   echo "- downloading model"
-  wget -O ~/sam/models/sam_vit_l_0b3195.pth https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth
+  wget --no-cache -O ~/sam/models/sam_vit_l_0b3195.pth https://dl.fbaipublicfiles.com/segment_anything/sam_vit_l_0b3195.pth
 
   # pulling image
   echo "- pulling docker image"
