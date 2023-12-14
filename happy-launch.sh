@@ -17,6 +17,14 @@ function data_viewer()
   exit 0
 }
 
+function raw_checker()
+{
+  echo "Raw checker..."
+  ~/happy/bin/happy-data-viewer &
+  clear
+  exit 0
+}
+
 function adams()
 {
   echo "ADAMS..."
@@ -70,11 +78,12 @@ fi
 # menu loop
 items=(1 "ENVI Viewer"
        2 "HAPPy Data Viewer"
-       3 "ADAMS"
-       4 "Start SAM"
-       5 "Stop SAM"
-       6 "Start SAM-HQ"
-       7 "Stop SAM-HQ")
+       3 "Raw checker"
+       4 "ADAMS"
+       5 "Start SAM"
+       6 "Stop SAM"
+       7 "Start SAM-HQ"
+       8 "Stop SAM-HQ")
 
 num_items=${#items[@]}
 height=$(($num_items/2+7))
@@ -89,11 +98,12 @@ while choice=$(dialog --title "HAPPy Tools" \
     case $choice in
         1) envi_viewer;;
         2) data_viewer;;
-        3) adams;;
-        4) start_sam;;
-        5) stop_sam;;
-        6) start_sam_hq;;
-        7) stop_sam_hq;;
+        3) raw_checker;;
+        4) adams;;
+        5) start_sam;;
+        6) stop_sam;;
+        7) start_sam_hq;;
+        8) stop_sam_hq;;
     esac
 done
 
