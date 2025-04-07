@@ -16,6 +16,7 @@ function install_happy_tools()
   virtualenv --system-site-packages -p /usr/bin/python3 ~/happy
   ~/happy/bin/pip install git+https://github.com/wairas/happy-tools.git
   ~/happy/bin/pip install git+https://github.com/wairas/happy-tools-tkinter.git
+  ~/happy/bin/pip install git+https://github.com/wairas/happy-tools-keras.git
   wget --no-cache -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
   chmod a+x ~/happy-launch.sh
 }
@@ -26,6 +27,7 @@ function update_happy_tools()
   ~/happy/bin/pip uninstall -y happy-tools
   ~/happy/bin/pip install --upgrade git+https://github.com/wairas/happy-tools.git
   ~/happy/bin/pip install --upgrade git+https://github.com/wairas/happy-tools-tkinter.git
+  ~/happy/bin/pip install --upgrade git+https://github.com/wairas/happy-tools-keras.git
   wget --no-cache -O ~/happy-launch.sh https://github.com/wairas/happy-scripts/blob/main/happy-launch.sh?raw=true
   chmod a+x ~/happy-launch.sh
 }
